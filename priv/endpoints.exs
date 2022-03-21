@@ -9,7 +9,7 @@
       "dnsSuffix" => "amazonaws.com",
       "partition" => "aws",
       "partitionName" => "AWS Standard",
-      "regionRegex" => "^(us|eu|af|ap|sa|ca|me)\\-\\w+\\-\\d+$",
+      "regionRegex" => "^(us|eu|af|ap|sa|ca)\\-\\w+\\-\\d+$",
       "regions" => %{
         "af-south-1" => %{"description" => "Africa (Cape Town)"},
         "ap-northeast-1" => %{"description" => "Asia Pacific (Tokyo)"},
@@ -25,7 +25,6 @@
         "eu-west-3" => %{"description" => "EU (Paris)"},
         "eu-north-1" => %{"description" => "EU (Stockholm)"},
         "eu-south-1" => %{"description" => "EU (Milan)"},
-        "me-south-1" => %{"description" => "Middle East (Bahrain)"},
         "sa-east-1" => %{"description" => "South America (Sao Paulo)"},
         "us-east-1" => %{"description" => "US East (N. Virginia)"},
         "us-east-2" => %{"description" => "US East (Ohio)"},
@@ -33,6 +32,20 @@
         "us-west-2" => %{"description" => "US West (Oregon)"}
       },
       "services" => %{
+        "personalize-events" => %{
+          "endpoints" => %{
+            "ap-south-1" => %{
+              "hostname" => "personalize-events.ap-south-1.amazonaws.com"
+            }
+          }
+        },
+        "personalize" => %{
+          "endpoints" => %{
+            "ap-south-1" => %{
+              "hostname" => "personalize-runtime.ap-south-1.amazonaws.com"
+            }
+          }
+        },
         "connect" => %{
           "endpoints" => %{
             "ap-northeast-1" => %{},
@@ -303,7 +316,6 @@
             "eu-west-2" => %{},
             "eu-west-3" => %{},
             "eu-north-1" => %{},
-            "me-south-1" => %{},
             "sa-east-1" => %{},
             "us-east-1" => %{},
             "us-east-2" => %{},
@@ -628,7 +640,6 @@
             "eu-west-2" => %{},
             "eu-west-3" => %{},
             "eu-north-1" => %{},
-            "me-south-1" => %{},
             "sa-east-1" => %{},
             "us-east-1" => %{},
             "us-east-2" => %{},
@@ -707,7 +718,6 @@
             "ap-northeast-1" => %{},
             "ap-southeast-1" => %{},
             "ap-southeast-2" => %{},
-            "ca-central-1" => %{},
             "eu-central-1" => %{},
             "eu-west-1" => %{},
             "eu-west-2" => %{},
@@ -2058,27 +2068,12 @@
         },
         "transcribe" => %{
           "endpoints" => %{
-            "af-south-1" => %{},
-            "ap-east-1" => %{},
-            "ap-northeast-1" => %{},
-            "ap-northeast-2" => %{},
-            "ap-south-1" => %{},
-            "ap-southeast-1" => %{},
-            "ap-southeast-2" => %{},
-            "ca-central-1" => %{},
-            "eu-central-1" => %{},
-            "eu-north-1" => %{},
-            "eu-west-1" => %{},
-            "eu-west-2" => %{},
-            "eu-west-3" => %{},
-            "me-south-1" => %{},
-            "sa-east-1" => %{},
             "us-east-1" => %{},
             "us-east-2" => %{},
-            "us-gov-east-1" => %{},
-            "us-gov-west-1" => %{},
-            "us-west-1" => %{},
-            "us-west-2" => %{}
+            "us-west-2" => %{},
+            "ap-southeast-2" => %{},
+            "ca-central-1" => %{},
+            "eu-west-1" => %{}
           }
         },
         "mediapackage" => %{
@@ -2152,71 +2147,6 @@
             "us-east-1" => %{},
             "us-east-2" => %{},
             "us-west-2" => %{}
-          }
-        },
-        "places.geo" => %{
-          "endpoints" => %{
-            "us-east-1" => %{},
-            "us-east-2" => %{},
-            "us-west-1" => %{},
-            "eu-north-1" => %{},
-            "eu-central-1" => %{},
-            "eu-west-1" => %{},
-            "ap-northeast-1" => %{},
-            "ap-southeast-1" => %{},
-            "ap-southeast-2" => %{}
-          }
-        },
-        "maps.geo" => %{
-          "endpoints" => %{
-            "us-east-1" => %{},
-            "us-east-2" => %{},
-            "us-west-1" => %{},
-            "eu-north-1" => %{},
-            "eu-central-1" => %{},
-            "eu-west-1" => %{},
-            "ap-northeast-1" => %{},
-            "ap-southeast-1" => %{},
-            "ap-southeast-2" => %{}
-          }
-        },
-        "geofencing.geo" => %{
-          "endpoints" => %{
-            "us-east-1" => %{},
-            "us-east-2" => %{},
-            "us-west-1" => %{},
-            "eu-north-1" => %{},
-            "eu-central-1" => %{},
-            "eu-west-1" => %{},
-            "ap-northeast-1" => %{},
-            "ap-southeast-1" => %{},
-            "ap-southeast-2" => %{}
-          }
-        },
-        "tracking.geo" => %{
-          "endpoints" => %{
-            "us-east-1" => %{},
-            "us-east-2" => %{},
-            "us-west-1" => %{},
-            "eu-north-1" => %{},
-            "eu-central-1" => %{},
-            "eu-west-1" => %{},
-            "ap-northeast-1" => %{},
-            "ap-southeast-1" => %{},
-            "ap-southeast-2" => %{}
-          }
-        },
-        "routes.geo" => %{
-          "endpoints" => %{
-            "us-east-1" => %{},
-            "us-east-2" => %{},
-            "us-west-1" => %{},
-            "eu-north-1" => %{},
-            "eu-central-1" => %{},
-            "eu-west-1" => %{},
-            "ap-northeast-1" => %{},
-            "ap-southeast-1" => %{},
-            "ap-southeast-2" => %{}
           }
         }
       }
