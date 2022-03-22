@@ -39,7 +39,7 @@
             }
           }
         },
-        "personalize" => %{
+        "personalize-runtime" => %{
           "endpoints" => %{
             "ap-south-1" => %{
               "hostname" => "personalize-runtime.ap-south-1.amazonaws.com"

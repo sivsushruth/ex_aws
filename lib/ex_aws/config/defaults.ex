@@ -71,6 +71,11 @@ defmodule ExAws.Config.Defaults do
     |> Map.merge(defaults(:geo))
   end
 
+  def defaults(service) when service in [:personalize_events, :personalize_runtime] do
+    %{service_override: :personalize}
+    |> Map.merge(defaults(:personalize))
+  end
+
   def defaults(_) do
     Map.merge(
       %{
